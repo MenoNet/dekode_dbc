@@ -1,18 +1,18 @@
 <template lang="pug">
-.min-h-screen.flex.flex-col(v-if="staff", class="md:flex-row")
+.flex.flex-col-reverse(v-if="staff", class="h-[100dvh] md:flex-row md:min-h-screen")
   // Left Side
-  .w-full.relative.flex.flex-col.justify-center.p-10.bg-dekode-bg(class="md:w-1/2 lg:p-24")
+  .w-full.relative.flex.flex-col.justify-center.p-6.bg-dekode-bg(class="h-1/2 md:w-1/2 md:h-full md:p-10 lg:p-24")
     
     // Greeting
-    .mb-12.z-10
-      h1.font-spartan.font-bold.text-5xl.leading-tight(class="md:text-6xl lg:text-[5.5rem]")
+    .mb-4.z-10(class="md:mb-12")
+      h1.font-spartan.font-bold.text-4xl.leading-tight(class="md:text-6xl lg:text-[5.5rem]")
         span.text-dekode-red Hello,
         span.text-black  I’m
         br
         span.text-black {{ staff.name }}.
     
     // Contact Info
-    .flex.flex-col.gap-4.mb-12.z-10
+    .flex.flex-col.gap-2.mb-6.z-10(class="md:gap-4 md:mb-12")
       // Phone
       .flex.items-center.gap-4
         .w-8.h-8.bg-black.rounded-full.flex.items-center.justify-center
@@ -31,14 +31,14 @@
     
     // Add to Contacts Button
     .z-10
-      button.bg-black.text-white.font-roboto.font-bold.py-3.px-12.rounded-xl.shadow-lg.transition-transform.duration-200.ease-in-out(class="hover:scale-105 hover:bg-gray-800" @click="downloadVCard") Add to Contacts
+      button.bg-black.text-white.font-roboto.font-bold.py-2.px-8.rounded-xl.shadow-lg.transition-transform.duration-200.ease-in-out(class="md:py-3 md:px-12 hover:scale-105 hover:bg-gray-800" @click="downloadVCard") Add to Contacts
 
     // Watermark Logo
-    .absolute.bottom-10.left-10(class="lg:left-24 lg:bottom-12 z-0")
-      img.opacity-40(src="../assets/dekode01.png" alt="dekode logo" class="w-32 md:w-40")
+    .absolute.bottom-4.left-4.z-0(class="md:bottom-10 md:left-10 lg:left-24 lg:bottom-12")
+      img.opacity-40(src="../assets/dekode01.png" alt="dekode logo" class="w-24 md:w-32 lg:w-40")
 
   // Right Side
-  .w-full.bg-white.relative.flex.items-center.justify-center.overflow-hidden(class="md:w-1/2 min-h-[50vh]")
+  .w-full.bg-white.relative.flex.items-center.justify-center.overflow-hidden(class="h-1/2 md:w-1/2 md:h-full")
     // Background Red Logo
     img.absolute.object-contain.max-w-none.scale-125(src="../assets/dekode02.png" alt="Background" class="w-[120%] right-[-10%] opacity-90 z-0 md:w-[130%] md:right-[-15%]")
     
@@ -48,7 +48,7 @@
     //- // Profile Image
     //- img.absolute.bottom-0.z-10.rounded-full.aspect-square.object-contain(v-if="staff.image", :src="getImageUrl(staff.image)" alt="Profile Picture" class="h-[90%] md:h-[95%] left-1/2 transform -translate-x-1/2")
 
-.min-h-screen.flex.items-center.justify-center.bg-dekode-bg(v-else)
+.flex.items-center.justify-center.bg-dekode-bg(v-else, class="h-[100dvh]")
   h1.font-spartan.font-bold.text-4xl User Not Found
 </template>
 
