@@ -5,12 +5,12 @@ import Home from '../views/Home.vue'
 
 const routes = [
   {
-    path: '/dekode_dbc',
+    path: '/',
     name: 'Home',
     component: Home
   },
   {
-    path: '/dekode_dbc/:id',
+    path: '/:id',
     name: 'Profile',
     component: Profile
   }
