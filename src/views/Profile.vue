@@ -74,9 +74,14 @@ const getImageUrl = (imageName) => {
 const downloadVCard = () => {
   if (!staff.value) return
 
+  const nameParts = staff.value.name.split(' ')
+  const lastName = nameParts.length > 1 ? nameParts.pop() : ''
+  const firstName = nameParts.join(' ')
+
   // Constructing a vCard v3.0 string manually to ensure browser compatibility
   const vcard = `BEGIN:VCARD
 VERSION:3.0
+N:${lastName};${firstName};;;
 FN:${staff.value.name}
 TEL;TYPE=CELL:${staff.value.phone}
 EMAIL;TYPE=PREF,INTERNET:${staff.value.email}
