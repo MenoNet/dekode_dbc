@@ -1,7 +1,7 @@
 <template lang="pug">
 .flex.flex-col-reverse(v-if="staff", class="h-[100dvh] md:flex-row md:min-h-screen")
   // Left Side
-  .w-full.relative.flex.flex-col.justify-center.p-6.bg-dekode-bg(class="h-1/2 md:w-1/2 md:h-full md:p-10 lg:p-24")
+  .w-full.relative.flex.flex-col.justify-start.px-6.pb-6.pt-12.bg-dekode-bg(class="h-[60%] md:justify-center md:w-1/2 md:h-full md:p-10 lg:p-24")
     
     // Greeting
     .mb-4.z-10(class="md:mb-12")
@@ -12,7 +12,7 @@
         span.text-black {{ staff.name }}.
     
     // Contact Info
-    .flex.flex-col.gap-2.mb-6.z-10(class="md:gap-4 md:mb-12")
+    .flex.flex-col.gap-2.mb-16.z-10(class="md:gap-4 md:mb-12")
       // Phone
       .flex.items-center.gap-4
         .w-8.h-8.bg-black.rounded-full.flex.items-center.justify-center
@@ -38,7 +38,7 @@
       img.opacity-40(src="../assets/dekode01.png" alt="dekode logo" class="w-24 md:w-32 lg:w-40")
 
   // Right Side
-  .w-full.bg-white.relative.flex.items-center.justify-center.overflow-hidden(class="h-1/2 md:w-1/2 md:h-full")
+  .w-full.bg-white.relative.flex.items-center.justify-center.overflow-hidden(class="h-[40%] md:w-1/2 md:h-full")
     // Background Red Logo
     img.absolute.object-contain.max-w-none.scale-125(src="../assets/dekode02.png" alt="Background" class="w-[120%] right-[-10%] opacity-90 z-0 md:w-[130%] md:right-[-15%]")
     
